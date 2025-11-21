@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Beacon Tower",
+  "classifications": [
+    "Library",
+    "NuGet",
+    "Common"
+  ],
+  "identity": "BeaconTower.Library.CSharp",
+  "name": "Beacon Tower .NET Library",
+  "shortName": "bt-lib",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "MyLib",
+  "preferNameDirectory": true,
+  "description": "Modern .NET 8 library template for creating reusable NuGet packages with best practices, testing, and CI/CD",
+  "symbols": {
+    "PackageId": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "BeaconTower.MyLib",
+      "defaultValue": "BeaconTower.MyLib",
+      "description": "The NuGet package ID (e.g., BeaconTower.MyLib)"
+    },
+    "Description": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "A reusable library for Beacon Tower projects",
+      "defaultValue": "A reusable library for Beacon Tower projects",
+      "description": "Library description for NuGet package metadata"
+    },
+    "GitHubOrg": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "beacontower",
+      "defaultValue": "beacontower",
+      "description": "GitHub organization name for package feed and repository URL"
+    },
+    "Author": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "Beacon Tower",
+      "defaultValue": "Beacon Tower",
+      "description": "Author name for package metadata and copyright"
+    },
+    "IncludeExamples": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Include example Calculator class and tests"
+    },
+    "EnableSourceLink": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Enable SourceLink for debugging support"
+    },
+    "GenerateDocumentation": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Generate XML documentation file for IntelliSense"
+    },
+    "SkipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Skip running 'dotnet restore' after project creation"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!IncludeExamples)",
+          "exclude": [
+            "**/Calculator.cs",
+            "**/CalculatorTests.cs"
+          ]
+        },
+        {
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**",
+            "**/.vs/**",
+            "**/.vscode/**",
+            "**/.git/**",
+            "**/.gitignore",
+            "**/node_modules/**",
+            "**/*.user",
+            "**/*.suo",
+            "**/.DS_Store",
+            "**/TestResults/**",
+            "**/coverage/**",
+            "**/.idea/**",
+            "BeaconTower.Templates.Lib.csproj"
+          ]
+        }
+      ]
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(!SkipRestore)",
+      "description": "Restore NuGet packages",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore' to restore NuGet packages"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+      "description": "Build and test",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet build' to build the solution and 'dotnet test' to run tests"
+        }
+      ],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6"
+    },
+    {
+      "description": "Open project in IDE",
+      "manualInstructions": [
+        {
+          "text": "Open the generated solution file in Visual Studio, Rider, or VS Code"
+        }
+      ],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6"
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "MyLib.sln"
+    }
+  ]
+}

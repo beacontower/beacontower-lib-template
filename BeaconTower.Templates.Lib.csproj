@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>BeaconTower.Templates.Lib</PackageId>
+    <Title>Beacon Tower Library Template</Title>
+    <Authors>Beacon Tower</Authors>
+    <Description>Modern .NET 8 library template for creating reusable NuGet packages with best practices, unit testing, code coverage, and CI/CD workflows.</Description>
+    <PackageTags>dotnet-new;templates;library;nuget;beacontower;testing</PackageTags>
+    <PackageProjectUrl>https://github.com/beacontower/beacontower-lib-template</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/beacontower/beacontower-lib-template</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Beacon Tower</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <TargetFramework>net8.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Include README in package -->
+    <None Include="README.md" Pack="true" PackagePath="\" />
+
+    <!-- Include all template content -->
+    <Content Include="src\**\*" Exclude="src\**\bin\**;src\**\obj\**;src\**\.vs\**;src\**\.vscode\**;src\**\.git\**;src\**\node_modules\**;src\**\TestResults\**;src\**\coverage\**;src\**\.idea\**;src\**\*.user;src\**\*.suo" />
+    <Content Include="tests\**\*" Exclude="tests\**\bin\**;tests\**\obj\**;tests\**\.vs\**;tests\**\.vscode\**;tests\**\.git\**;tests\**\node_modules\**;tests\**\TestResults\**;tests\**\coverage\**;tests\**\.idea\**;tests\**\*.user;tests\**\*.suo" />
+
+    <!-- Include GitHub workflows -->
+    <Content Include=".github\**\*" />
+
+    <!-- Include configuration files -->
+    <Content Include=".editorconfig" />
+    <Content Include=".releaserc.json" />
+    <Content Include="Directory.Build.props" />
+    <Content Include="Directory.Packages.props" />
+    <Content Include="*.sln" />
+
+    <!-- Include template configuration files -->
+    <Content Include=".template.config\**\*" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>MyLib</RootNamespace>
+    <AssemblyName>MyLib</AssemblyName>
+
+    <!-- NuGet Package Configuration -->
+    <IsPackable>true</IsPackable>
+    <PackageId>BeaconTower.MyLib</PackageId>
+    <Description>A reusable library for Beacon Tower projects</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <!-- Include README in package -->
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <!-- Uncomment and add icon.png to project root if you have one -->
+    <!-- <None Include="..\..\icon.png" Pack="true" PackagePath="\" /> -->
+  </ItemGroup>
+
+</Project>
