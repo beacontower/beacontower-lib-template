@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/beacontower/beacontower-lib-template/compare/v1.0.1...v1.1.0) (2025-12-06)
+
+
+### Features
+
+* upgrade template to .NET 10 with C# 14 ([e91e784](https://github.com/beacontower/beacontower-lib-template/commit/e91e7841ba2c589045b8fdf8b2f9ab68d44d7427))
+
 ## [1.0.1](https://github.com/beacontower/beacontower-lib-template/compare/v1.0.0...v1.0.1) (2025-11-21)
 
 
