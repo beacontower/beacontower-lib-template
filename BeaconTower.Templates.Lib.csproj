@@ -6,7 +6,7 @@
     <PackageId>BeaconTower.Templates.Lib</PackageId>
     <Title>Beacon Tower Library Template</Title>
     <Authors>Beacon Tower</Authors>
-    <Description>Modern .NET 8 library template for creating reusable NuGet packages with best practices, unit testing, code coverage, and CI/CD workflows.</Description>
+    <Description>Modern .NET 10 library template for creating reusable NuGet packages with best practices, unit testing, code coverage, and CI/CD workflows.</Description>
     <PackageTags>dotnet-new;templates;library;nuget;beacontower;testing</PackageTags>
     <PackageProjectUrl>https://github.com/beacontower/beacontower-lib-template</PackageProjectUrl>
     <RepositoryUrl>https://github.com/beacontower/beacontower-lib-template</RepositoryUrl>
@@ -15,7 +15,7 @@
     <Copyright>Copyright © Beacon Tower</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>

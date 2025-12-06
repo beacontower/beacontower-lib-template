@@ -1,10 +1,10 @@
 # MyLib - .NET Library Template
 
-A modern .NET 8 library template for creating reusable NuGet packages with best practices built-in.
+A modern .NET 10 library template for creating reusable NuGet packages with best practices built-in.
 
 ## Features
 
-- **.NET 8** with **C# 12**
+- **.NET 10** with **C# 14**
 - **NuGet packaging** with semantic versioning
 - **XML documentation** generation
 - **SourceLink** for debugging
@@ -20,8 +20,8 @@ A modern .NET 8 library template for creating reusable NuGet packages with best 
 
 ### Prerequisites
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Visual Studio 2022 17.12+ or JetBrains Rider 2024.3+
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
+- Visual Studio 2022 17.14+ or JetBrains Rider 2025.1+
 
 ### Build & Test
 
@@ -320,15 +320,15 @@ Update in `Directory.Build.props`:
 
 To support multiple .NET versions, update `Directory.Build.props`:
 ```xml
-<TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+<TargetFrameworks>net10.0;net8.0</TargetFrameworks>
 ```
 
 Use conditional compilation for version-specific code:
 ```csharp
-#if NET8_0_OR_GREATER
-// .NET 8+ specific code
-#else
-// Fallback for older versions
+#if NET10_0_OR_GREATER
+// .NET 10+ specific code
+#elif NET8_0_OR_GREATER
+// .NET 8 specific code
 #endif
 ```
 
