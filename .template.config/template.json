@@ -14,15 +14,31 @@
     "type": "project"
   },
   "sourceName": "MyLib",
-  "preferNameDirectory": true,
-  "description": "Modern .NET 8 library template for creating reusable NuGet packages with best practices, testing, and CI/CD",
+  "preferNameDirectory": false,
+  "description": "Modern .NET 10 library template for creating reusable NuGet packages with best practices, testing, and CI/CD",
   "symbols": {
-    "PackageId": {
-      "type": "parameter",
-      "datatype": "text",
-      "replaces": "BeaconTower.MyLib",
-      "defaultValue": "BeaconTower.MyLib",
-      "description": "The NuGet package ID (e.g., BeaconTower.MyLib)"
+    "nameLower": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "toLower": true
+      }
+    },
+    "repoName": {
+      "type": "generated",
+      "generator": "regex",
+      "datatype": "string",
+      "parameters": {
+        "source": "nameLower",
+        "steps": [
+          {
+            "regex": "\\.",
+            "replacement": "-"
+          }
+        ]
+      },
+      "replaces": "mylib"
     },
     "Description": {
       "type": "parameter",
@@ -87,7 +103,6 @@
             "**/.vs/**",
             "**/.vscode/**",
             "**/.git/**",
-            "**/.gitignore",
             "**/node_modules/**",
             "**/*.user",
             "**/*.suo",
@@ -112,24 +127,6 @@
       ],
       "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
       "continueOnError": true
-    },
-    {
-      "description": "Build and test",
-      "manualInstructions": [
-        {
-          "text": "Run 'dotnet build' to build the solution and 'dotnet test' to run tests"
-        }
-      ],
-      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6"
-    },
-    {
-      "description": "Open project in IDE",
-      "manualInstructions": [
-        {
-          "text": "Open the generated solution file in Visual Studio, Rider, or VS Code"
-        }
-      ],
-      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6"
     }
   ],
   "primaryOutputs": [

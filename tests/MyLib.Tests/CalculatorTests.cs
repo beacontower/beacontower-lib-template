@@ -5,13 +5,6 @@ namespace MyLib.Tests;
 
 public class CalculatorTests
 {
-    private readonly Calculator _calculator;
-
-    public CalculatorTests()
-    {
-        _calculator = new Calculator();
-    }
-
     [Theory]
     [InlineData(2, 3, 5)]
     [InlineData(0, 0, 0)]
@@ -20,7 +13,7 @@ public class CalculatorTests
     public void Add_Should_Return_Correct_Sum(int a, int b, int expected)
     {
         // Act
-        var result = _calculator.Add(a, b);
+        var result = Calculator.Add(a, b);
 
         // Assert
         result.Should().Be(expected);
@@ -34,7 +27,7 @@ public class CalculatorTests
     public void Subtract_Should_Return_Correct_Difference(int a, int b, int expected)
     {
         // Act
-        var result = _calculator.Subtract(a, b);
+        var result = Calculator.Subtract(a, b);
 
         // Assert
         result.Should().Be(expected);
@@ -48,7 +41,7 @@ public class CalculatorTests
     public void Multiply_Should_Return_Correct_Product(int a, int b, int expected)
     {
         // Act
-        var result = _calculator.Multiply(a, b);
+        var result = Calculator.Multiply(a, b);
 
         // Assert
         result.Should().Be(expected);
@@ -62,7 +55,7 @@ public class CalculatorTests
     public void Divide_Should_Return_Correct_Quotient(int a, int b, double expected)
     {
         // Act
-        var result = _calculator.Divide(a, b);
+        var result = Calculator.Divide(a, b);
 
         // Assert
         result.Should().BeApproximately(expected, 0.0001);
@@ -72,7 +65,7 @@ public class CalculatorTests
     public void Divide_Should_Throw_DivideByZeroException_When_Divisor_Is_Zero()
     {
         // Act
-        Action act = () => _calculator.Divide(10, 0);
+        Action act = () => Calculator.Divide(10, 0);
 
         // Assert
         act.Should().Throw<DivideByZeroException>()

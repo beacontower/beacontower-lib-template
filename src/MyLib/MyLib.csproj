@@ -6,10 +6,9 @@
 
     <!-- NuGet Package Configuration -->
     <IsPackable>true</IsPackable>
-    <PackageId>BeaconTower.MyLib</PackageId>
+    <PackageId>MyLib</PackageId>
     <Description>A reusable library for Beacon Tower projects</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <!-- Include README in package -->

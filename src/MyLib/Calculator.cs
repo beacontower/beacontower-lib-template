@@ -3,7 +3,7 @@ namespace MyLib;
 /// <summary>
 /// Example calculator class demonstrating library functionality.
 /// </summary>
-public class Calculator
+public static class Calculator
 {
     /// <summary>
     /// Adds two numbers.
@@ -11,7 +11,7 @@ public class Calculator
     /// <param name="a">First number.</param>
     /// <param name="b">Second number.</param>
     /// <returns>Sum of a and b.</returns>
-    public int Add(int a, int b) => a + b;
+    public static int Add(int a, int b) => a + b;
 
     /// <summary>
     /// Subtracts one number from another.
@@ -19,7 +19,7 @@ public class Calculator
     /// <param name="a">Number to subtract from.</param>
     /// <param name="b">Number to subtract.</param>
     /// <returns>Difference of a and b.</returns>
-    public int Subtract(int a, int b) => a - b;
+    public static int Subtract(int a, int b) => a - b;
 
     /// <summary>
     /// Multiplies two numbers.
@@ -27,7 +27,7 @@ public class Calculator
     /// <param name="a">First number.</param>
     /// <param name="b">Second number.</param>
     /// <returns>Product of a and b.</returns>
-    public int Multiply(int a, int b) => a * b;
+    public static int Multiply(int a, int b) => a * b;
 
     /// <summary>
     /// Divides one number by another.
@@ -36,7 +36,7 @@ public class Calculator
     /// <param name="b">Divisor.</param>
     /// <returns>Quotient of a divided by b.</returns>
     /// <exception cref="DivideByZeroException">Thrown when b is zero.</exception>
-    public double Divide(int a, int b)
+    public static double Divide(int a, int b)
     {
         if (b == 0)
         {
