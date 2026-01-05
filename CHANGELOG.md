@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/beacontower/beacontower-lib-template/compare/v1.1.1...v1.1.2) (2026-01-05)
+
+
+### Bug Fixes
+
+* **ci:** Add GH_PACKAGES_TOKEN auth to PR workflow ([cfa53e2](https://github.com/beacontower/beacontower-lib-template/commit/cfa53e243de1cbb9da2f4c93698b62bdaa28681d))
+
 ## [1.1.1](https://github.com/beacontower/beacontower-lib-template/compare/v1.1.0...v1.1.1) (2025-12-07)
 
 
